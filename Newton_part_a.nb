@@ -1,0 +1,236 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      8439,        228]
+NotebookOptionsPosition[      7478,        206]
+NotebookOutlinePosition[      7877,        222]
+CellTagsIndexPosition[      7834,        219]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Note", " ", "that", " ", "we", " ", "will", " ", "use", " ", "variable", 
+    " ", "names", " ", "y", " ", "and", " ", "x", " ", "but", " ", "they", 
+    " ", "correspond", " ", "to", " ", "scaled", " ", "variables", " ", 
+    "theta", " ", "and", " ", 
+    RowBox[{"ksi", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"n", "=", " ", "1"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"LaneEmdenEqn", " ", "=", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"1", "/", 
+         RowBox[{"x", "^", "2"}]}], 
+        RowBox[{"D", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "^", "2"}], " ", 
+           RowBox[{"D", "[", 
+            RowBox[{
+             RowBox[{"y", "[", "x", "]"}], ",", " ", "x"}], "]"}]}], ",", " ",
+           "x"}], "]"}]}], " ", "+", " ", 
+       RowBox[{
+        RowBox[{"y", "[", "x", "]"}], " ", "n"}]}], " ", "==", " ", "0"}]}], 
+    ";"}], "\n", 
+   RowBox[{
+    RowBox[{"BCs", " ", "=", " ", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"y", "[", "0", "]"}], " ", "==", " ", "1"}], ",", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"y", "'"}], "[", "0", "]"}], " ", "==", " ", "0"}]}], 
+      "}"}]}], ";"}], "\n", 
+   RowBox[{"LaneEmdensol", " ", "=", " ", 
+    RowBox[{"DSolve", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"LaneEmdenEqn", ",", " ", "BCs"}], "}"}], ",", " ", 
+      RowBox[{"y", "[", "x", "]"}], ",", " ", "x"}], "]"}]}], "\n", 
+   RowBox[{
+    RowBox[{"ySolution", "[", "x_", "]"}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{"y", "[", "x", "]"}], " ", "/.", " ", 
+     RowBox[{"LaneEmdensol", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}]}], " ", 
+   RowBox[{"(*", 
+    RowBox[{"//", " ", 
+     RowBox[{"Exact", " ", "Form"}]}], "*)"}], "\n", 
+   RowBox[{"yTaylor", " ", "=", " ", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{"ySolution", "[", "x", "]"}], ",", " ", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", " ", "0", ",", " ", "4"}], "}"}]}], "]"}]}], " ", 
+   RowBox[{"(*", 
+    RowBox[{"//", " ", 
+     RowBox[{
+     "Taylor", " ", "Expansion", " ", "up", " ", "to", " ", "4", "th", " ", 
+      "Order", " ", "Term"}]}], "*)"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.945267994784358*^9, 3.945268166040555*^9}, {
+  3.945268239329506*^9, 3.945268316993964*^9}, {3.945268347068481*^9, 
+  3.9452685065987062`*^9}, {3.945268546621518*^9, 3.945268624417457*^9}, {
+  3.945268683464422*^9, 
+  3.9452687123241253`*^9}},ExpressionUUID->"a5a0cc02-ed03-4e16-b7ce-\
+c064077b6b2e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Solve", "incnst", 
+   "\"Inconsistent or redundant transcendental equation. After reduction, the \
+bad equation is \\!\\(\\*RowBox[{\\\"\[ImaginaryI]\\\", \\\" \\\", RowBox[{\\\
+\"(\\\", RowBox[{RowBox[{\\\"2\\\", \\\" \\\", \\\"\[ImaginaryI]\\\", \\\" \\\
+\", TemplateBox[List[\\\"1\\\"], \\\"C\\\"]}], \\\"+\\\", TemplateBox[List[\\\
+\"2\\\"], \\\"C\\\"]}], \\\")\\\"}]}]\\) == 0.\"", 2, 156, 59, 
+   30415179697033272564, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.945267939138468*^9, 3.9452681688140993`*^9, 
+  3.945268248051712*^9, 3.945268292004887*^9, 3.945268350312619*^9, 
+  3.9452684961505947`*^9, 3.945268695678487*^9},
+ CellLabel->
+  "During evaluation of \
+In[153]:=",ExpressionUUID->"20c00f3a-ba5b-4545-9b70-5c84dbd8f61f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Solve", "incnst", 
+   "\"Inconsistent or redundant transcendental equation. After reduction, the \
+bad equation is \\!\\(\\*RowBox[{RowBox[{\\\"2\\\", \\\" \\\", \\\"\
+\[ImaginaryI]\\\", \\\" \\\", TemplateBox[List[\\\"1\\\"], \\\"C\\\"]}], \
+\\\"+\\\", TemplateBox[List[\\\"2\\\"], \\\"C\\\"]}]\\) == 0.\"", 2, 156, 60, 
+   30415179697033272564, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.945267939138468*^9, 3.9452681688140993`*^9, 
+  3.945268248051712*^9, 3.945268292004887*^9, 3.945268350312619*^9, 
+  3.9452684961505947`*^9, 3.945268695816766*^9},
+ CellLabel->
+  "During evaluation of \
+In[153]:=",ExpressionUUID->"6a8c1947-1296-49c3-871c-72548564e77c"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "DSolve", "ifun", 
+   "\"Inverse functions are being used by DSolve, so some solutions may not \
+be found.\"", 2, 156, 61, 30415179697033272564, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.945267939138468*^9, 3.9452681688140993`*^9, 
+  3.945268248051712*^9, 3.945268292004887*^9, 3.945268350312619*^9, 
+  3.9452684961505947`*^9, 3.945268695822698*^9},
+ CellLabel->
+  "During evaluation of \
+In[153]:=",ExpressionUUID->"a7a7d1d3-bcba-4f0c-8cad-fcd3ab9d64ef"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"y", "[", "x", "]"}], "\[Rule]", 
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"\[ImaginaryI]", " ", 
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "\[ImaginaryI]"}], " ", "x"}]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         SuperscriptBox["\[ExponentialE]", 
+          RowBox[{"2", " ", "\[ImaginaryI]", " ", "x"}]]}], ")"}]}], 
+      RowBox[{"2", " ", "x"}]]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.9452679392781153`*^9, 3.9452681688419323`*^9, 
+  3.945268248056397*^9, 3.9452682920112743`*^9, 3.945268350465213*^9, 
+  3.945268496299176*^9, 3.9452686958262253`*^9},
+ CellLabel->
+  "Out[156]=",ExpressionUUID->"3117db49-115e-44b1-af7a-d7c792512c0a"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   RowBox[{"\[ImaginaryI]", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "\[ImaginaryI]"}], " ", "x"}]], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"2", " ", "\[ImaginaryI]", " ", "x"}]]}], ")"}]}], 
+   RowBox[{"2", " ", "x"}]]}]], "Output",
+ CellChangeTimes->{3.9452679392781153`*^9, 3.9452681688419323`*^9, 
+  3.945268248056397*^9, 3.9452682920112743`*^9, 3.945268350465213*^9, 
+  3.945268496299176*^9, 3.9452686958275137`*^9},
+ CellLabel->
+  "Out[157]=",ExpressionUUID->"0a621498-6d0b-4a26-a73a-9cbdd63d7175"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"1", "-", 
+   FractionBox[
+    SuperscriptBox["x", "2"], "6"], "+", 
+   FractionBox[
+    SuperscriptBox["x", "4"], "120"], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "x", "]"}], "5"],
+    SeriesData[$CellContext`x, 0, {}, 0, 5, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`x, 0, {1, 0, 
+    Rational[-1, 6], 0, 
+    Rational[1, 120]}, 0, 5, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.9452679392781153`*^9, 3.9452681688419323`*^9, 
+  3.945268248056397*^9, 3.9452682920112743`*^9, 3.945268350465213*^9, 
+  3.945268496299176*^9, 3.945268695828977*^9},
+ CellLabel->
+  "Out[158]=",ExpressionUUID->"b71b6c74-9fcd-4ac5-b652-3f2f585d41a9"]
+}, Open  ]]
+},
+WindowSize->{606, 683.25},
+WindowMargins->{{211.5, Automatic}, {20.25, Automatic}},
+FrontEndVersion->"14.1 for Linux x86 (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"4dd7eecb-8e70-4c59-bbe6-45d8047c7795"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 2626, 71, 218, "Input",ExpressionUUID->"a5a0cc02-ed03-4e16-b7ce-c064077b6b2e"],
+Cell[3205, 95, 797, 15, 46, "Message",ExpressionUUID->"20c00f3a-ba5b-4545-9b70-5c84dbd8f61f"],
+Cell[4005, 112, 719, 14, 45, "Message",ExpressionUUID->"6a8c1947-1296-49c3-871c-72548564e77c"],
+Cell[4727, 128, 516, 11, 26, "Message",ExpressionUUID->"a7a7d1d3-bcba-4f0c-8cad-fcd3ab9d64ef"],
+Cell[5246, 141, 813, 21, 61, "Output",ExpressionUUID->"3117db49-115e-44b1-af7a-d7c792512c0a"],
+Cell[6062, 164, 672, 17, 61, "Output",ExpressionUUID->"0a621498-6d0b-4a26-a73a-9cbdd63d7175"],
+Cell[6737, 183, 725, 20, 48, "Output",ExpressionUUID->"b71b6c74-9fcd-4ac5-b652-3f2f585d41a9"]
+}, Open  ]]
+}
+]
+*)
+
